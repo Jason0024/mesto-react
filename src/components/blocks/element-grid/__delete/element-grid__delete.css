@@ -2,7 +2,7 @@
   transition: opacity 0.3s ease-in-out;
   width: 18px;
   height: 20px;
-  background: url('../../../images/element-grid__delete.svg') center no-repeat;
+  background: url('../../../images/icon/element-grid__delete.svg') center no-repeat;
   font-size: 0; /* Скрываем текст */
   border: none;
   cursor: pointer;

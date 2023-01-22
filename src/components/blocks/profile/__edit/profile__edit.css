@@ -8,7 +8,7 @@
   grid-column-start: 2;
   grid-row-start: 1;
   align-self: center;
-  background: #000 url('../../../images/EditButton.svg') center no-repeat;
+  background: #000 url('../../../images/icon/EditButton.svg') center no-repeat;
   font-size: 0;
   cursor: pointer;
 }

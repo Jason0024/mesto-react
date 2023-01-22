@@ -1,4 +1,4 @@
-
+import logo from '../src/components/images/logo.svg';
 import './index.css'
 
 
@@ -8,20 +8,20 @@ function App() {
     <div className="page">
 
       <header className="header">
-        <img src="<%= require('./images/Vector.png')%>" alt="Место - Russia" className="header__logo" />
+        <img src={logo} alt="Логотип проекта Mesto" className="header__logo" />
       </header>
 
       <main className="content">
 
         <section className="profile">
-          <img src="<%= require('./images/avatar.jpg')%>" className="profile__avatar" />
+          <img src="#" className="profile__avatar" alt="Аватар профиля" />
           <button className="profile__avatar-btn"></button>
           <div className="profile__info">
             <h1 className="profile__name">JASOn</h1>
             <p className="profile__job">Web-developer</p>
             <button className="profile__edit" type="button">Редактировать</button>
           </div>
-          <button className="add-button" type="button">Добавить фото</button>
+          <button className="profile__add-button" type="button">Добавить фото</button>
         </section>
 
         <section className="elements"></section>
