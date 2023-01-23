@@ -30,12 +30,12 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
-  function handleCardClick(card) {
+  function handleCardClick(cardItem) {
     setIsImageOpen(true);
     setSelectedCard({
       ...selectedCard,
-      name: card.name,
-      link: card.link
+      name: cardItem.name,
+      link: cardItem.link
     })
   }
 

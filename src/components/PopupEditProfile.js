@@ -4,7 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function PopupEditProfile (props) {
 
   return (
-    <PopupWithForm
+    < PopupWithForm
       isOpen = { props.isOpen }
       onClose = { props.onClose }
       id = 'profile-popup'

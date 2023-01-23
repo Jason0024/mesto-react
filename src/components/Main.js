@@ -24,25 +24,25 @@ function Main(props) {
         <main>
             <section className="profile">
                 <img src={userAvatar} className="profile__avatar" alt="Аватар профиля" />
-                <button type="button" className="profile__avatar-btn" aria-label="Редактировать аватар профиля" onClick={props.onEditAvatar}></button>
+                <button type="button" className="profile__avatar-btn" aria-label="Редактировать аватар профиля" onClick={props.onEditAvatar} />
                 <div className="profile__info">
                     <h1 className="profile__name">{userName}</h1>
                     <p className="profile__job">{userDescription}</p>
-                    <button type="button" className="profile__edit" aria-label="Редактировать профиль" onClick={props.onEditProfile}></button>
+                    <button type="button" className="profile__edit" aria-label="Редактировать профиль" onClick={props.onEditProfile} />
                 </div>
                 <button className="profile__add-button" type="button" aria-label="Добавить место"
-                    onClick={props.onAddPlace}></button>
+                    onClick={props.onAddPlace} />
             </section>
 
             <section className="elements">
-                {cards.map((card) => (
-                    <Card
-                        key={card._id}
-                        link={card.link}
-                        name={card.name}
-                        likeCount={card.likes.length}
-                        onCardClick={props.onCardClick}
-                        card={card}
+                {cards.map((cardItem) => (
+                    < Card
+                        key = {cardItem._id}
+                        link = {cardItem.link}
+                        name = {cardItem.name}
+                        likeCount = {cardItem.likes.length}
+                        onCardClick = {props.onCardClick}
+                        card = {cardItem}
                     />
                 ))}
 

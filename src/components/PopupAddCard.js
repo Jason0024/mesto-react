@@ -4,7 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function PopupAddCard (props) {
 
   return (
-    <PopupWithForm
+    < PopupWithForm
       isOpen = { props.isOpen }
       onClose = { props.onClose }
       id = 'cards-popup'
