@@ -10,7 +10,6 @@ function PopupEditProfile (props) {
       id = 'profile-popup'
       title = 'Редактировать профиль'
       type = 'profile'
-      buttonText = 'Сохранить'
     >
       <label htmlFor="username-input" className="popup__field">
         <input id="username-input" type="text" className="popup__input"

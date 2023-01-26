@@ -50,7 +50,6 @@ function App() {
   }
 
   return (
-    <>
       <div className="page">
         <Header />
         <Main
@@ -63,14 +62,6 @@ function App() {
         <PopupEditAvatar
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
-        />
-        < PopupWithForm
-        isOpen = { isDeleteOpen }
-        onClose = { closeAllPopups }
-        id = 'delete-card'
-        title = 'Вы уверены?'
-        type = 'delete-card'
-        buttonText = 'Да' 
         />
         <PopupEditProfile
           isOpen={isEditProfilePopupOpen}
@@ -85,8 +76,15 @@ function App() {
           onClose={closeAllPopups}
           card={selectedCard}
         />
+        < PopupWithForm
+        isOpen = { isDeleteOpen }
+        onClose = { closeAllPopups }
+        id = 'delete-card'
+        title = 'Вы уверены?'
+        type = 'delete-card'
+        buttonText = 'Да' 
+        />
       </div >
-    </>
   );
 }
 

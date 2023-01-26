@@ -10,7 +10,6 @@ function PopupEditAvatar(props) {
       id='avatar-popup'
       title='Обновить аватар'
       type='avatar'
-      buttonText='Сохранить'
     >
       <label htmlFor="avatar-input" className="popup__field">
         <input id="avatar" type="url" className="popup__input"
