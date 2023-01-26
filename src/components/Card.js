@@ -16,7 +16,7 @@ function Card(props) {
                     <button type="button" className="element-grid__delete" aria-label="Удалить"></button>
                     <div className="element-grid__likes">
                         <button type="button" className="element-grid__like" aria-label="Like"></button>
-                        <span className="element-grid__likes-number">{props.likeCount}</span>
+                        <span className="element-grid__likes-number">{ props.likeCount > 0 ? props.likeCount : null }</span>
                     </div>
                 </div>
             </li>
