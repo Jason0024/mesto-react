@@ -10,7 +10,7 @@ import PopupEditProfile from "./PopupEditProfile";
 import PopupAddCard from './PopupAddCard';
 import ImagePopup from './ImagePopup';
 
-import CurrentUserContext from '../contexts/CurrentUserContext';
+import CurrentUserContext from '../context/CurrentUserContext';
 import apiConnect from '../utils/Api';
 
 
