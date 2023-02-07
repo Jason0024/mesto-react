@@ -1,32 +1,34 @@
-import React, { useContext } from 'react';
-import CurrentUserContext from '../context/CurrentUserContext';
+import React from 'react';
+import { CurrentUserContext } from '../context/CurrentUserContext';
 
-function Card(props) {
+function Card({card, onCardClick, onCardLike, onDeleteClick}) {
+    const handleClick = ()=>{ onCardClick(card); }
+    const handleLikeClick = ()=>{ onCardLike(card); }
+    const handleDeleteClick = ()=>{ onDeleteClick(card); }
+    
     // Подписка на контекст
-    const userItem = useContext(CurrentUserContext);
+    const userItem = React.useContext(CurrentUserContext);
     // Определение владения карточкой
-    const isOwn = props.card.owner._id === userItem._id;
+    const isOwn = card.owner._id === userItem._id;
+    
     // Определение наличие поставленного лайка
-    const isLiked = props.card.likes.some(item => item._id === userItem._id);
-    function handleClick() { props.onCardClick(props.card) }
-    function handleDelete() { props.onCardDelete(props.card) }
-    function handleLike() { props.onCardLike(props.card) }
-
+    const isLiked = card.likes.some(i => i._id === userItem._id);
     return (
         <div className="element-grid-template">
             <li className="element-grid__item">
-                <img src={props.link} className="element-grid__pic" onClick={handleClick} alt={props.name} />
+                {isOwn && <button type="button" className='element-grid__delete' onClick={handleDeleteClick} aria-label="Удалить" />}
+                <img src={card.link} className="element-grid__pic" onClick={handleClick}  alt={`Фотография места ${card.name}`} />
                 <div className="element-grid__item-description">
-                    <h2 className="element-grid__title">{props.name}</h2>
-                    {isOwn && <button type="button" className='element-grid__delete' onClick={handleDelete} aria-label="Удалить" />}
+                    <h2 className="element-grid__title">{card.name}</h2>
                     <div className="element-grid__likes">
-                        <button type="button" className={`element-grid__like ${isLiked ? 'element-grid__like_active' : ''}`} onClick={handleLike} aria-label="Like" />
-                        <span className="element-grid__likes-number">{props.likeCount > 0 ? props.likeCount : null}</span>
+                        <button type="button" className={isLiked ? "element-grid__like element-grid__like_active":"element-grid__like"}  onClick={handleLikeClick} aria-label="Like" />
+                        <span className="element-grid__likes-number">{card.likes.length}</span>
                     </div>
                 </div>
             </li>
         </div>
     )
+    
 }
 
 export default Card;

@@ -4,13 +4,13 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-import PopupWithForm from './PopupWithForm';
+
 import PopupEditAvatar from './PopupEditAvatar';
 import PopupEditProfile from "./PopupEditProfile";
 import PopupAddCard from './PopupAddCard';
 import ImagePopup from './ImagePopup';
 
-import CurrentUserContext from '../context/CurrentUserContext';
+import {CurrentUserContext} from '../context/CurrentUserContext';
 import apiConnect from '../utils/Api';
 
 
@@ -70,13 +70,16 @@ function App() {
   }
 
   // Обработчик лайков карточки
-  function handleCardLike(card) {
-    const isLiked = card.likes.some(cardItem => cardItem._id === currentUser._id);
+  const handleCardLike = (card) => {
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
     apiConnect.changeLikeCardStatus(card._id, !isLiked)
-      .then((cardsItem) => {
-        setCards((state) => state.map((cardItem) => cardItem._id === card._id ? cardsItem : cardItem))
+      .then((newCard) => {
+        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
       })
-      .catch((err) => { console.log(`Возникла ошибка при обработке лайков, ${err}`) })
+      .catch(err => {
+        console.log(err.status);
+        alert(`Ошибка загрузки данных карточки:\n ${err.status}\n ${err.text}`);
+      });
   }
 
   // Обработчик данных пользователя
