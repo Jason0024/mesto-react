@@ -29,35 +29,36 @@ function PopupAddCard({ isOpen, onClose, onAddPlace }) {
   return (
     < PopupWithForm
       title='Новое место'
-      id='cards-popup'
-      type='mesto'
+      name="new-location"
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleAddPlaceSubmit}
       buttonText='Создать' >
-        
-      <label htmlFor="place-name-input" className="popup__field">
-        <input id="place-name-input"
-               type="text"
-               className="popup__input"
-               name="placename" 
-               placeholder="Название" 
-               value={name}
-               minLength="2" 
-               maxLength="30" 
-               onChange={handleNameChange}
-               required />
+
+      <label className="popup__field">
+        <input
+          id="place-name-input"
+          type="text"
+          className="popup__input"
+          name="placename"
+          placeholder="Название"
+          value={name}
+          minLength="2"
+          maxLength="30"
+          onChange={handleNameChange}
+          required />
         <span className="place-name-input-error popup__input-error" />
       </label>
-      <label htmlFor="place-image-input" className="popup__field">
-        <input id="place-image-input"
-               type="url" 
-               className="popup__input"
-               name="placeimage" 
-               required 
-               value={link}
-               onChange={handleLinkChange}
-               placeholder="Ссылка на картинку" />
+      <label className="popup__field">
+        <input
+          id="place-image-input"
+          type="url"
+          className="popup__input"
+          name="placeimage"
+          required
+          value={link}
+          onChange={handleLinkChange}
+          placeholder="Ссылка на картинку" />
         <span className="place-image-input-error popup__input-error"></span>
       </label>
     </PopupWithForm>
